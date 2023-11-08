@@ -22,6 +22,7 @@ app.use(express.static('public'));
 app.use(layouts)
 app.use("/", require('./routes/index'));
 app.use("/authors", require('./routes/authors'));
+app.use('/books', require('./routes/books'))
 
 app.listen(process.env.PORT || 3000);
 

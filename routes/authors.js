@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Author = require('../models/author');
-const author = require('../models/author');
 
 //All authors
 router.get("/", async (req, res) => {
@@ -24,7 +23,6 @@ router.get("/new", (req, res) => {
 
 //Create Author
 router.post("/", async (req, res) => {
-    //res.send(req.body.authorName)
     try {
         const author = new Author({
             name: req.body.authorName
