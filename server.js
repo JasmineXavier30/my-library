@@ -4,7 +4,10 @@ if(process.env.NODE_ENV !== "production")
 const express = require('express');
 const layouts = require('express-ejs-layouts');
 const app =  express();
+const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+
+app.use(methodOverride('_method'))
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL, {useUnifiedTopology: true, useNewUrlParser: true});
